@@ -1,14 +1,48 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 function Home() {
+    const [data,setData] = useState([]);
+    useEffect(()=>{
+       axios.get('http://localhost:3000/users') //fetching the the records from json file
+        .then((res)=>{setData(res.data);})
+        .catch((err)=>console.log(err));
+    },[])
+
   return (
-    <div className='d-flex flex-column justify-content align-items-center bg-light vh-100'>
+    <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
         <h1>List of Users</h1>
         <div className='w-75 rounded bg-white border shadow p-4'>
-
+            <table className='table table-stripend'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        data.map((d,i)=>(
+                            <tr key={i}>
+                                <td>{d.id}</td>
+                                <td>{d.name}</td>
+                                <td>{d.email}</td>
+                                <td>{d.phone}</td>
+                                <td>
+                                    <button className='btn btn-sm btn-primary me-2'>Edit</button>
+                                    <button className='btn btn-sm btn-danger'>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
   )
 }
 
-export default Home
+export default Home;
