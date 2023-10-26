@@ -1,10 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home';
-import Create from './Components/Create';
-import Read from './Components/Read';
-import Update from './Components/Update';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Home from './Home';
+import Create from './Create';
+import Read from './Read';
+import Update from './Update';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -13,10 +14,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/update" element={<Update />} />
-          <Route path="/read" element={<Read />} />
+          <Route path="/update/:id" element={<Update />} />
+          <Route path="/read/:id" element={<Read />} />
         </Routes>
       </BrowserRouter>
+
+    
     </div>
   );
 }
