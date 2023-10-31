@@ -1,17 +1,28 @@
+import axios from 'axios';
 import React from 'react';
-import usersData from './db1.json';
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 function Home() {
-  const [data] = useState(usersData.users);
+
+ const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/users")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
 
   return (
     <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
       <h1>List of Users</h1>
       <div className='w-75 rounded bg-white border shadow p-4'>
-        <div className='d-flex justify-content-end'><Link to="/create" className='btn btn-success'>Add +</Link></div>
+        <div className='d-flex justify-content-end'>
+          <Link to="/create" className='btn btn-success'>Add +</Link></div>
         
         <table className='table table-striped'>
           <thead>
@@ -24,8 +35,8 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            {data.map((user) => (
-              <tr key={user.id}>
+            {data.map((user, i) => (
+              <tr key={i}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>

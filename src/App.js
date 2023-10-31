@@ -1,4 +1,4 @@
-import './App.css';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Create from './Create';
@@ -19,7 +19,6 @@ function App() {
           <Route path="/read/:id" element={<Read />} />
         </Routes>
       </BrowserRouter>
-
     
     </div>
   );

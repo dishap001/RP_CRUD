@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState  } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Create() {
   const [values, setValues] = useState({
     name: '',
     email: '',
     phone: '',
-  });
-
-  const handleSubmit = (event) => {
+  })
+  const navigate = useNavigate();
+  const handleSubmit =(event)=>{
     event.preventDefault();
-    console.log(values); // Log the form values
+      axios.post("http://localhost:3000/users",values)
+        .then((res) => {
+          console.log(res);
+          navigate('/');
+        } )
+        .catch((err) => console.log(err));
+   
   }
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  }
 
   return (
     <div className='d-flex w-100 vh-100 justify-content-center align-items-center bg-light'>
@@ -27,16 +27,15 @@ function Create() {
         <h2>Add a User</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="name">
               Name
             </label>
             <input
               type="text"
               className="form-control"
-              id="name"
+              placeholder="Enter Name"
               name="name" // Add name attribute
-              value={values.name}
-              onChange={handleInputChange}
+              onChange={(e)=> setValues({...values , name: e.target.value})}
             />
           </div>
           <div className="mb-3">
@@ -46,23 +45,19 @@ function Create() {
             <input
               type="email"
               className="form-control"
-              id="email"
-              name="email" // Add name attribute
-              value={values.email}
-              onChange={handleInputChange}
+              placeholder="Enter Email"
+              name="email"
+              onChange={e=> setValues({...values,email: (e).target.value})}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone
-            </label>
+            <label htmlFor="phone" className="form-label">Phone</label>
             <input
               type="tel"
               className="form-control"
-              id="phone"
-              name="phone" // Add name attribute
-              value={values.phone}
-              onChange={handleInputChange}
+              placeholder="Enter Phone Number"
+              name="phone" 
+              onChange={(e)=> setValues({...values,phone: e.target.value})}
             />
           </div>
           <button type="submit" className="btn btn-success">Submit</button>
@@ -72,5 +67,4 @@ function Create() {
     </div>
   );
 }
-
 export default Create;
