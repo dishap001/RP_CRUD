@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "John Doe",
+      "name": "John Kenny",
       "username": "johndoe",
       "email": "johndoe@example.com",
       "phone": "555-123-4567",
@@ -40,16 +40,9 @@
       "phone": "555-789-4567",
       "website": "www.michaelwilson.com"
     },
+    
     {
       "id": 6,
-      "name": "Emily Davis",
-      "username": "emilydavis",
-      "email": "emilydavis@example.com",
-      "phone": "555-234-5678",
-      "website": "www.emilydavis.com"
-    },
-    {
-      "id": 7,
       "name": "Daniel Lee",
       "username": "daniellee",
       "email": "daniellee@example.com",
@@ -57,7 +50,7 @@
       "website": "www.daniellee.com"
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Megan White",
       "username": "meganwhite",
       "email": "meganwhite@example.com",
@@ -65,7 +58,7 @@
       "website": "www.meganwhite.com"
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "William Brown",
       "username": "williambrown",
       "email": "williambrown@example.com",
@@ -73,18 +66,13 @@
       "website": "www.williambrown.com"
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Olivia Taylor",
       "username": "oliviataylor",
       "email": "oliviataylor@example.com",
       "phone": "555-890-1234",
       "website": "www.oliviataylor.com"
-    },
-    {
-      "name": "Disha",
-      "email": "hrd@trellissoft.ai",
-      "phone": "435563234444",
-      "id": 11
     }
+   
   ]
 }
