@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "name": "John Kenny",
+      "name": "John kenny",
       "username": "johndoe",
       "email": "johndoe@example.com",
       "phone": "555-123-4567",
@@ -40,7 +40,6 @@
       "phone": "555-789-4567",
       "website": "www.michaelwilson.com"
     },
-    
     {
       "id": 6,
       "name": "Daniel Lee",
@@ -56,23 +55,6 @@
       "email": "meganwhite@example.com",
       "phone": "555-345-6789",
       "website": "www.meganwhite.com"
-    },
-    {
-      "id": 8,
-      "name": "William Brown",
-      "username": "williambrown",
-      "email": "williambrown@example.com",
-      "phone": "555-456-7890",
-      "website": "www.williambrown.com"
-    },
-    {
-      "id": 9,
-      "name": "Olivia Taylor",
-      "username": "oliviataylor",
-      "email": "oliviataylor@example.com",
-      "phone": "555-890-1234",
-      "website": "www.oliviataylor.com"
     }
-   
   ]
 }
