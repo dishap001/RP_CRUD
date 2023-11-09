@@ -60,7 +60,7 @@ function Home() {
             ))}
           </tbody>
         </table>
-    <p>hurhdfu</p>
+   
          </div>
     </div>
     
